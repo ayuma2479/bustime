@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+
+<title>バス運行時間最適化プログラム</title>
+<script>
+// 希望時間の入力フィールドを追加する
+function addInputField() {
+    var container = document.getElementById("inputContainer");
+    var newInput = document.createElement("input");
+    newInput.type = "time";
+    newInput.classList.add("desiredTime"); // 同じクラス名を使用
+    container.appendChild(newInput);
+    container.appendChild(document.createElement("br"));
+}
+
+// 全ての希望時間に対して最適な運行時間を計算し表示する
+function calculateBusTimes() {
+    var inputTimes = document.querySelectorAll(".desiredTime");
+    var resultText = "";
+
+    inputTimes.forEach(function(input, index) {
+        var time = input.value;
+        // ここで各希望時間に対する最適な運行時間を計算します
+        // 今はダミーの結果を表示するだけです
+        resultText += "希望時間 " + (index + 1) + ": " + time + " の最適なバスの時間: " + time + " (仮)<br>";
+    });
+
+    document.getElementById("result").innerHTML = resultText;
+}
+</script>
+</head>
+<body>
+<h1 class="title">バス運行時間最適化プログラム</h1>
+<form onsubmit="event.preventDefault(); calculateBusTimes();">
+    <div id="inputContainer">
+        <label>希望のバスの時間:</label>
+        <input type="time" class="desiredTime" required>
+        <br>
+    </div>
+    <button type="button" onclick="addInputField()">希望時間を追加</button>
+    <input type="submit" value="計算">
+</form>
+<p id="result"></p>
+</body>
+</html>

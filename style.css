@@ -1,0 +1,44 @@
+/* 全体のフォントと背景色を設定 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* タイトルのスタイルを定義 */
+.title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* フォーム要素のスタイリング */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ボタンのスタイリング */
+button, input[type="submit"] {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0084ff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* 結果表示部分のスタイリング */
+#result {
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+}
